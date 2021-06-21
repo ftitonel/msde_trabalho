@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/br.uece.ppgcc.esdm.cml/src-gen" creationIcons="false"
+    editDirectory="/br.uece.ppgcc.esdm.cml.edit/src-gen" editorDirectory="/br.uece.ppgcc.esdm.cml.editor/src-gen"
+    modelPluginID="br.uece.ppgcc.esdm.cml" modelName="Cml" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>cml.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Cml" basePackage="br.uece.ppgcc.esdm" disposableProviderFactory="true"
+      ecorePackage="cml.ecore#/">
+    <genClasses ecoreClass="cml.ecore#//Contract">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//Contract/actions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//Contract/clauses"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Contract/namespace"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//Contract/parties"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Contract/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//Contract/assets"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//Contract/triggers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cml.ecore#//Contract/typesystem"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//Clause">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Clause/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cml.ecore#//Clause/may_clause_actions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cml.ecore#//Clause/must_clause_actions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cml.ecore#//Clause/clause_parties"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cml.ecore#//Clause/due_after_clause_trigger"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cml.ecore#//Clause/due_before_clause_trigger"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Clause/given_condition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cml.ecore#//Clause/and_clause_actions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cml.ecore#//Clause/or_clause_actions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cml.ecore#//Clause/xor_clause_actions"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cml.ecore#//Clause/due_within_RT"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cml.ecore#//Clause/due_every_RT_from_AT_to_AT"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Action/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cml.ecore#//Action/ensure"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cml.ecore#//Action/action_assets"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//Ensure">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Ensure/regra"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//Party">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Party/actor"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//Trigger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Trigger/name"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//Assets">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//Assets/name"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//TypeSystem">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cml.ecore#//TypeSystem/name"/>
+    </genClasses>
+    <genClasses ecoreClass="cml.ecore#//Boolean"/>
+    <genClasses ecoreClass="cml.ecore#//String"/>
+    <genClasses ecoreClass="cml.ecore#//Duration"/>
+    <genClasses ecoreClass="cml.ecore#//Integer"/>
+    <genClasses ecoreClass="cml.ecore#//Real"/>
+    <genClasses ecoreClass="cml.ecore#//DateTime"/>
+    <genClasses ecoreClass="cml.ecore#//Transaction"/>
+    <genClasses ecoreClass="cml.ecore#//Event"/>
+  </genPackages>
+</genmodel:GenModel>

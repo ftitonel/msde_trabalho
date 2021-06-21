@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="cml" nsURI="http://www.example.org/cml" nsPrefix="cml">
+  <eClassifiers xsi:type="ecore:EClass" name="Contract">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actions" upperBound="-1"
+        eType="#//Action" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clauses" upperBound="-1"
+        eType="#//Clause" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="namespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parties" upperBound="-1"
+        eType="#//Party" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assets" upperBound="-1"
+        eType="#//Assets" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="triggers" upperBound="-1"
+        eType="#//Trigger" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typesystem" upperBound="-1"
+        eType="#//TypeSystem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Clause">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="may_clause_actions" upperBound="-1"
+        eType="#//Action"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="must_clause_actions" eType="#//Action"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clause_parties" lowerBound="1"
+        upperBound="-1" eType="#//Party"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="due_after_clause_trigger"
+        eType="#//Trigger"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="due_before_clause_trigger"
+        eType="#//Trigger"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="given_condition" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="and_clause_actions" upperBound="-1"
+        eType="#//Action"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="or_clause_actions" upperBound="-1"
+        eType="#//Action"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="xor_clause_actions" upperBound="-1"
+        eType="#//Action"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="due_within_RT" eType="#//Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="due_every_RT_from_AT_to_AT"
+        eType="#//Duration"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ensure" upperBound="-1"
+        eType="#//Ensure"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action_assets" eType="#//Assets"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ensure">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="regra" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Party">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="actor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Trigger">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Assets">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeSystem" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Boolean" eSuperTypes="#//TypeSystem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="String" eSuperTypes="#//TypeSystem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Duration" eSuperTypes="#//TypeSystem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Integer" eSuperTypes="#//TypeSystem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Real" eSuperTypes="#//TypeSystem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DateTime" eSuperTypes="#//TypeSystem"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Transaction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Event"/>
+</ecore:EPackage>
